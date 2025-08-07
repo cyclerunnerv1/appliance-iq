@@ -1,8 +1,16 @@
 import React from "react";
+import { Player } from 'lottie-react';
 
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-800 via-slate-900 to-black text-white font-sans">
+      <div className="absolute top-4 right-4 w-24">
+  <Player
+    autoplay
+    loop
+    src="https://lottie.host/3ad8a8d2-9f32-406e-8c4e-54f178347cdf/H4drD1Jb3g.json"
+  />
+</div>
       <header className="p-6 text-center space-y-2">
         <h1 className="text-4xl font-bold">Appliance IQ</h1>
         <p className="text-lg">Expert Appliance Repairs in Ohio</p>
@@ -41,6 +49,23 @@ function App() {
           <p>📧 applianceiq@myyahoo.com</p>
           <p>🏙️ Serving Dayton, Cincinnati, and Columbus, OH</p>
         </section>
+
+        <section id="booking">
+          <h2 className="text-2xl font-semibold mb-2 mt-10">Book a Service Call</h2>
+          <form
+            action="https://formspree.io/f/mdkdpoyd" 
+            method="POST"
+            className="space-y-4 max-w-md"
+       >
+          <input type="text" name="name" placeholder="Your Name" required className="w-full p-2 rounded text-black" />
+          <input type="email" name="email" placeholder="Your Email" required className="w-full p-2 rounded text-black" />
+          <input type="tel" name="phone" placeholder="Phone Number" className="w-full p-2 rounded text-black" />
+          <textarea name="message" placeholder="Describe the issue..." rows="4" required className="w-full p-2 rounded text-black"></textarea>
+          <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Submit Request
+          </button>
+        </form>
+       </section>
       </main>
 
       <footer className="text-center p-4 text-sm text-gray-400">
